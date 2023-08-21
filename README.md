@@ -80,3 +80,31 @@ For the fraudulent transactions that are still not identified by the model, the 
 
  
 Thus, the cost incurred now is due to the left out fraudulent transactions that the model fails to detect and the installation cost of the second level authentication service. Hence, the total savings for the bank would be the difference of costs incurred after and before the model deployment.
+
+
+## **Cost-Benefit Analysis**
+Let us take a look at what you need to do in order to perform the cost-benefit analysis step by step.
+
+**Part I: Analyse the dataset and find the following figures:**
+
+- Average number of transactions per month 
+- Average number of fraudulent transactions per month
+- Average amount per fraudulent transaction 
+
+**Part II: Compare the cost incurred per month by the bank before and after the model deployment:**
+
+- Cost incurred per month before the model was deployed = Average amount per fraudulent transaction * Average number of fraudulent transactions per month
+- Cost incurred per month after the model is built and deployed: <Use the test metric from the model evaluation part and the calculations performed in Part I to compute the values given below>
+ 
+
+Let TF be the average number of transactions per month detected as fraudulent by the model and let the cost of providing customer executive support per fraudulent transaction detected by the model = $1.5
+
+Total cost of providing customer support per month for fraudulent transactions detected by the model = 1.5 * TF.
+Let FN be the average number of transactions per month that are fraudulent but not detected by the model 
+
+Cost incurred due to these fraudulent transactions left undetected by the model = Average amount per fraudulent transaction * FN
+Therefore, the cost incurred per month after the model is built and deployed = 1.5*TF + Average amount per fraudulent transaction * FN
+Final savings = Cost incurred before - Cost incurred after.
+ 
+
+Note that you’re not including the model deployment cost since it will only be a one-time expenditure and you’re trying to gauge the long-term benefits of putting this model into practice.
